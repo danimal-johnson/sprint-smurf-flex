@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import smurfReducer from './smurfReducer';
+import smurfsReducer from './smurfsReducer';
 
 export const allReducers = combineReducers({
-  smurfs: smurfReducer,
+  smurfs: smurfsReducer,
 })
 
 export default allReducers;
