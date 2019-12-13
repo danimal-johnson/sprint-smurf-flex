@@ -7,6 +7,7 @@
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-evenly;
+  background: #ccc;
 }
 
 .smurf-form {
@@ -15,17 +16,51 @@
   border: 1px solid black;
   border-radius: 5px;
   padding: 10px;
+  margin: 10px;
+  background: turquoise;
+}
+
+.smurf-form button {
+  margin-top: 15px;
 }
 
 .smurf {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  min-width: 150px;
+  margin: 10px;
   border: 1px solid black;
   border-radius: 5px;
   padding: 10px;
   background: turquoise;
+  text-align: left;
+}
+
+.smurf h4 {
+  color: yellow;
+  text-align: center;
+  font-size: 1.6rem;
+  margin: 10px 0;
+}
+
+.smurf ul {
+  padding-left: 15px;
+  padding-right: 5px;
+}
+
+.smurf button {
+  color: red;
+  background: transparent;
+  font-weight: bold;
+  border: none;
+  font-size: 1.6rem;
+  width: 2rem;
+  align-self: center;
 }
 
 .village {
-  border: 2px solid hotpink;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
