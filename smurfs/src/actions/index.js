@@ -6,7 +6,16 @@ export const FETCH_SMURFS_FAILURE = 'FETCH_SMURFS_FAILURE';
 
 // Async action creator:
 export const getSmurfs = () => dispatch => {
+  dispatch({type: FETCH_SMURFS_START });
 
-  // TODO: Axios call here.
-
+  axios
+    .get("http://localhost:3333/smurfs")
+    .then(res => {
+      console.log("RESPONSE:", res.data);
+      dispatch({ type: FETCH_SMURFS_SUCCESS, payload: res.data});
+    })
+    .catch(err => {
+      console.error("Cannot get smurfs. Response:", err);
+      dispatch({type: FETCH_SMURFS_FAILURE, payload: err.response})
+    });
 }
