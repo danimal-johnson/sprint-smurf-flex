@@ -2,27 +2,68 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.top-section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  background: #ccc;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.smurf-form {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  background: turquoise;
 }
 
-.App-title {
-  font-size: 1.5em;
+.smurf-form button {
+  margin-top: 15px;
 }
 
-.App-intro {
-  font-size: large;
+.smurf {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  min-width: 150px;
+  margin: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  background: turquoise;
+  text-align: left;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.smurf h4 {
+  color: yellow;
+  text-align: center;
+  font-size: 1.6rem;
+  margin: 10px 0;
+}
+
+.smurf ul {
+  padding-left: 15px;
+  padding-right: 5px;
+}
+
+.smurf button {
+  color: red;
+  background: transparent;
+  font-weight: bold;
+  border: none;
+  font-size: 1.6rem;
+  width: 2rem;
+  align-self: center;
+}
+
+.village {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-top: 10px;
 }
