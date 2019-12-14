@@ -4,12 +4,17 @@ import {
   FETCH_SMURFS_FAILURE,
   ADD_SMURF_START,
   ADD_SMURF_SUCCESS,
-  ADD_SMURF_FAILURE } from '../actions';
+  ADD_SMURF_FAILURE,
+  DELETE_SMURF_START,
+  DELETE_SMURF_SUCCESS,
+  DELETE_SMURF_FAILURE
+} from '../actions';
 
 const initialState = {
   smurfs: null,
   isFetching: false,
   isAdding: false,
+  isDeleting: false, 
   error: ""
 }
 
@@ -64,6 +69,33 @@ export const smurfsReducer = (state=initialState, action) => {
         isAdding: false,
         error: action.payload
       };
+
+      // Deleting a smurf
+
+      case DELETE_SMURF_START:
+        console.log("DELETE START");
+        return {
+          ...state,
+          isDeleting: true
+        };
+      case DELETE_SMURF_SUCCESS:
+        console.log("DELETE SUCCESS");
+        console.log("Payload:", action.payload);
+        return {
+          ...state,
+          smurfs: action.payload,
+          isDeleting: false,
+          error: ''
+        };
+      case DELETE_SMURF_FAILURE:
+        console.log("DELETE FAILURE");
+        return {
+          ...state,
+          isDeleting: false,
+          error: action.payload
+        };
+
+    // Default
     default:
       console.log("DEFAULT");
       return state;

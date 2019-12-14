@@ -1,5 +1,6 @@
 import React from 'react';
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
+import { deleteSmurf } from '../actions';
 
 const Smurf = props => {
   console.log("Smurf Props:", props);
@@ -12,8 +13,17 @@ const Smurf = props => {
         <li>Height: {props.height}</li>
         <li>ID: {props.id}</li>
       </ul>
-      <button>X</button>
+      <button onClick={() => (deleteSmurf(props.id))}>X</button>
     </div>
   )
 }
-export default Smurf;
+
+const mapStateToProps = state => {
+  return {
+    smurfs: state.smurfs.smurfs,
+    isFetching: state.smurfs.isDeleting,
+    error: state.smurfs.error
+  };
+}
+
+export default connect(mapStateToProps, { deleteSmurf })(Smurf);
